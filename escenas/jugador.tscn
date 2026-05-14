@@ -8,6 +8,7 @@
 
 [node name="jugador" type="CharacterBody3D" unique_id=1650437550]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000504, 0, 0, 0)
+collision_layer = 5
 script = ExtResource("1_6478c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1995424962]
