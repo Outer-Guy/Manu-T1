@@ -1,0 +1,10 @@
+extends Area3D
+
+func _on_body_entered(body: Node3D) -> void:
+	pass # Replace with function body.
+
+var ListaIgnorar : Array [Node3D]
+
+var vida = 100 
+
+var vida = -20

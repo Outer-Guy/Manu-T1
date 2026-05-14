@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://c7d1xck0xb84w"]
+
+[ext_resource type="Script" uid="uid://c231syeoxisbf" path="res://escenas/hurtbox.gd" id="1_ne2um"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tjh3y"]
+
+[node name="hurtbox" type="Area3D" unique_id=625418029]
+script = ExtResource("1_ne2um")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1234593691]
+shape = SubResource("BoxShape3D_tjh3y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
