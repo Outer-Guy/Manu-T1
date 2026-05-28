@@ -15,7 +15,7 @@ static func _new_hurt_box(new_position : Vector3, body: Node3D, new_lifetime : f
 	print("spawn: ", new_position)
 	return new_hurtbox
 	
-func _psysics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 		lifetime -= delta
 		if lifetime <= 0:
 			queue_free() 
