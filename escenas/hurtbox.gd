@@ -8,7 +8,7 @@ const hurtboxScene : PackedScene = preload("res://escenas/hurtbox.tscn")
 
 static func _new_hurt_box(new_position : Vector3, body: Node3D, new_lifetime : float) -> Node3D:
 	var new_hurtbox : Node3D = hurtboxScene.instantiate()
-	new_hurtbox.ListaIgnorar.apend(body)
+	new_hurtbox.ListaIgnorar.append(body)
 	new_hurtbox.position = new_position
 	new_hurtbox.lifetime = new_lifetime
 	
@@ -25,6 +25,6 @@ func _on_body_entered(body: Node3D) -> void:
 		if(node == body):
 			return
 	print(body)
-	body.queve_free()
+	body.queue_free()
 	pass # Replace with function body.
 	
