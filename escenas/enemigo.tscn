@@ -14,10 +14,10 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	 
 	var currentLocation = global_transform.origin
-	var nexLocation = navAgent.get_next_path_position()
-	var nextVelocity = (nexLocation-currentLocation).normalized() *SPEED
+	#var nexLocation = navAgent.get_next_path_position()
+	#var nextVelocity = (nexLocation-currentLocation).normalized() *SPEED
 	
-	velocity=velocity.move_toward(nextVelocity,0.2)
+	#velocity=velocity.move_toward(nextVelocity,0.2)
 	
 
 	move_and_slide()
