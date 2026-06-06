@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://4heebobn7b2v" path="res://escenas/jugador.tscn" id="1_lb6ek"]
 [ext_resource type="PackedScene" uid="uid://djn7q46bonw81" path="res://escenas/enemigo.tscn" id="2_mvxp1"]
+[ext_resource type="Script" uid="uid://b42xlgsv4k4fq" path="res://escenas/spawner.gd" id="3_vk8im"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_lb6ek"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -76,3 +77,6 @@ shape = SubResource("BoxShape3D_xi31o")
 
 [node name="enemigo" parent="." unique_id=645149189 instance=ExtResource("2_mvxp1")]
 transform = Transform3D(1, 0, 0, 0, 1.943359, 0, 0, 0, 0.008422188, 5.9356713, 1.4716794, 2.560257)
+
+[node name="spawner" type="Node3D" parent="." unique_id=666859877]
+script = ExtResource("3_vk8im")

@@ -1,29 +1,43 @@
 [gd_scene format=3 uid="uid://djn7q46bonw81"]
 
 [sub_resource type="GDScript" id="GDScript_hecv5"]
-script/source = "extends CharacterBody3D
+script/source = "class_name enemigo
+extends CharacterBody3D
 
+var player 
 
-const SPEED = 5.0
+const SPEED = 1.5
 @onready var navAgent = $NavigationAgent3D
 @onready var target = $jugador
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
-	 
-	var currentLocation = global_transform.origin
-	#var nexLocation = navAgent.get_next_path_position()
-	#var nextVelocity = (nexLocation-currentLocation).normalized() *SPEED
-	
-	#velocity=velocity.move_toward(nextVelocity,0.2)
-	
+var timer : float = 0
+const enemigoscene : PackedScene = preload (\"res://escenas/enemigo.tscn\")
 
-	move_and_slide()
+static func _create(new_position : Vector3) -> Node3D:
+	var new_enemigo : Node3D = enemigoscene.instantiate()
+	new_enemigo.position = new_position
 	
+	print(\"spawn: \", new_position)
+	return new_enemigo
+func _ready() -> void:
+	player = get_tree().get_nodes_in_group(\"player\")[0]
+func _physics_process(delta: float) -> void:
+	if position.distance_to(player.position) < 2:
+		timer -= delta
+		if timer <= 0:
+			attack() 
+			timer = 1
+	var direction = position.direction_to(player.position) * SPEED
+	velocity = direction
+	move_and_slide()
+
 func _target_position(target):
 	navAgent.target_position = target.global_transform.origin
+
+func attack():
+	var new_hurtbox := hurtbox._new_hurt_box(position,self,0.1)
+	get_tree().root.add_child(new_hurtbox)
+	
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pg5a0"]
