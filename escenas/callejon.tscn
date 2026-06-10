@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://caii8ci0ap6s0"]
+
+[ext_resource type="PackedScene" uid="uid://djn7q46bonw81" path="res://escenas/enemigo.tscn" id="2_cgdfr"]
+[ext_resource type="PackedScene" uid="uid://4heebobn7b2v" path="res://escenas/jugador.tscn" id="2_lf4p2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fa8cx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_lf4p2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cgdfr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fa8cx"]
+size = Vector3(1.7315063, 1, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_cgdfr"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fa8cx"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_a6did"]
+sky_material = SubResource("ProceduralSkyMaterial_fa8cx")
+
+[sub_resource type="Environment" id="Environment_lf4p2"]
+background_mode = 2
+sky = SubResource("Sky_a6did")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="callejon" type="Node3D" unique_id=1753040109]
+transform = Transform3D(0.83424115, 0, 0, 0, 1, 0, 0, 0, 0.7594442, 0, 0, 0)
+
+[node name="parades y pisos" type="Node3D" parent="." unique_id=284889454]
+transform = Transform3D(-9.517886, 0, 0.19544584, 0, 30.139772, 0, -0.47316214, 0, -3.9314878, 16.95766, 4.4610796, -102.45779)
+
+[node name="calle" type="StaticBody3D" parent="parades y pisos" unique_id=1388275175]
+transform = Transform3D(-3.0743313, 0, -0.6043529, 0, 0.045753505, 0, 0.3700017, 0, -29.430973, 1.4723926, -0.14801309, -15.060949)
+physics_material_override = SubResource("PhysicsMaterial_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/calle" unique_id=1178303314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00033826922, -3.8146973e-06, -0.0012919937)
+mesh = SubResource("BoxMesh_lf4p2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/calle" unique_id=1487736565]
+shape = SubResource("BoxShape3D_cgdfr")
+
+[node name="pared4" type="Node3D" parent="parades y pisos" unique_id=2113819387]
+transform = Transform3D(2.718483, 0, 0, 0, 1.0000002, 0, -5.9604645e-08, 0, 0.92219955, 0, 0, 0)
+
+[node name="pared" type="StaticBody3D" parent="parades y pisos/pared4" unique_id=159209836]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/pared4/pared" unique_id=1284830478]
+transform = Transform3D(2.7579172, 0, -1.3969839e-09, 0, 1.5411757, 0, -5.9604645e-08, 0, 0.94605285, 1.8589247, 0, -0.24705362)
+shape = SubResource("BoxShape3D_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/pared4/pared" unique_id=1122204922]
+transform = Transform3D(4.782465, 0, -4.656613e-10, 0, 1.0000008, 0, -4.7683716e-07, 0, 0.91040987, 1.8447204, 0.27002567, -0.33031368)
+mesh = SubResource("BoxMesh_cgdfr")
+
+[node name="pared2" type="Node3D" parent="parades y pisos" unique_id=1562547789]
+transform = Transform3D(0.055815056, 0, -0.39087546, 0, 1.0000001, 0, 6.2125583, 0, 0.020581955, -1.041631, 0, -26.126783)
+
+[node name="pared" type="StaticBody3D" parent="parades y pisos/pared2" unique_id=540008917]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/pared2/pared" unique_id=390385834]
+transform = Transform3D(4.782465, 0, -4.656613e-10, 0, 1.0000008, 0, -4.7683716e-07, 0, 0.91040987, 1.8447204, 0.27002567, -0.33031368)
+mesh = SubResource("BoxMesh_cgdfr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/pared2/pared" unique_id=748286838]
+transform = Transform3D(2.7579172, 0, -1.3969839e-09, 0, 1.5411757, 0, -5.9604645e-08, 0, 0.94605285, 1.8434913, 0, -0.34920835)
+shape = SubResource("BoxShape3D_fa8cx")
+
+[node name="vereda izquierda" type="StaticBody3D" parent="parades y pisos" unique_id=400259226]
+transform = Transform3D(-1.3353375, 0, -0.43706512, 0, 0.0457535, 0, 0.16071045, 0, -21.284342, 2.845386, -0.1395193, -19.768171)
+physics_material_override = SubResource("PhysicsMaterial_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/vereda izquierda" unique_id=912025163]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, -0.1321615, -3.8146973e-06, -0.0012919903)
+mesh = SubResource("BoxMesh_lf4p2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/vereda izquierda" unique_id=1117964967]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999976, -0.13505733, -1.3709068e-06, 0)
+shape = SubResource("BoxShape3D_cgdfr")
+
+[node name="vereda derecha" type="StaticBody3D" parent="parades y pisos" unique_id=775670338]
+transform = Transform3D(-1.3353376, 0, -0.60435283, 0, 0.0457535, 0, 0.16071047, 0, -29.430973, -0.14934838, -0.1395193, -14.865649)
+physics_material_override = SubResource("PhysicsMaterial_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/vereda derecha" unique_id=1744394998]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.9999999, -0.1321615, -3.8146973e-06, -0.0012919903)
+mesh = SubResource("BoxMesh_lf4p2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/vereda derecha" unique_id=1724734149]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999976, -0.13505733, -1.3709068e-06, 0)
+shape = SubResource("BoxShape3D_cgdfr")
+
+[node name="pared" type="Node3D" parent="parades y pisos" unique_id=2114857897]
+transform = Transform3D(0.039110214, 0, -0.40409175, 0, 1.0000001, 0, 4.3532043, 0, 0.021277873, 3.4275792, 0, -27.594103)
+
+[node name="pared" type="StaticBody3D" parent="parades y pisos/pared" unique_id=1474391962]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/pared/pared" unique_id=1539665873]
+transform = Transform3D(2.7579172, 0, -1.3969839e-09, 0, 1.5411757, 0, -5.9604645e-08, 0, 0.94605285, 1.8589247, 0, -0.24705362)
+shape = SubResource("BoxShape3D_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/pared/pared" unique_id=2089130078]
+transform = Transform3D(4.782465, 0, -4.656613e-10, 0, 1.0000008, 0, -4.7683716e-07, 0, 0.91040987, 1.8447204, 0.27002567, -0.33031368)
+mesh = SubResource("BoxMesh_cgdfr")
+
+[node name="pared3" type="Node3D" parent="parades y pisos" unique_id=1571497893]
+transform = Transform3D(1.0000001, 0, 1.8626451e-09, 0, 1.0000001, 0, -7.450581e-09, 0, 1.0000001, -0.6029253, 1.4901161e-08, -29.361473)
+
+[node name="pared" type="StaticBody3D" parent="parades y pisos/pared3" unique_id=208712197]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/pared3/pared" unique_id=657988663]
+transform = Transform3D(2.7579172, 0, -1.3969839e-09, 0, 1.5411757, 0, -5.9604645e-08, 0, 0.94605285, 1.8589247, 0, -0.24705362)
+shape = SubResource("BoxShape3D_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/pared3/pared" unique_id=285093214]
+transform = Transform3D(4.782465, 0, -4.656613e-10, 0, 1.0000008, 0, -4.7683716e-07, 0, 0.91040987, 1.8447204, 0.27002567, -0.33031368)
+mesh = SubResource("BoxMesh_cgdfr")
+
+[node name="calle2" type="StaticBody3D" parent="parades y pisos" unique_id=1150733114]
+transform = Transform3D(-4.172325e-07, 0, 8.411104, 0, 0.04575357, 0, -8.528543, 0, -5.9604645e-07, 6.988913, -0.14801331, -4.878313)
+physics_material_override = SubResource("PhysicsMaterial_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/calle2" unique_id=241220295]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00033826922, -3.8146973e-06, -0.0012919937)
+mesh = SubResource("BoxMesh_lf4p2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/calle2" unique_id=858888089]
+shape = SubResource("BoxShape3D_cgdfr")
+
+[node name="pared5" type="Node3D" parent="parades y pisos" unique_id=401902481]
+transform = Transform3D(1.5544746, 0, 3.7252903e-09, 0, 1.0000008, 0, -2.9802322e-08, 0, 0.9400768, 4.448612, 0, -9.342905)
+
+[node name="pared" type="StaticBody3D" parent="parades y pisos/pared5" unique_id=1376790845]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/pared5/pared" unique_id=1372365969]
+transform = Transform3D(2.7579172, 0, -1.3969839e-09, 0, 1.5411757, 0, -5.9604645e-08, 0, 0.94605285, 1.8589247, 0, -0.24705362)
+shape = SubResource("BoxShape3D_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/pared5/pared" unique_id=220635275]
+transform = Transform3D(4.782465, 0, -4.656613e-10, 0, 1.0000008, 0, -4.7683716e-07, 0, 0.91040987, 1.8447204, 0.27002567, -0.33031368)
+mesh = SubResource("BoxMesh_cgdfr")
+
+[node name="pared6" type="Node3D" parent="parades y pisos" unique_id=1449487443]
+transform = Transform3D(-0.0053660683, 0, 0.45527813, 0, 1.0000012, 0, -1.9963894, 0, -0.001223743, 10.976869, 1.4901161e-08, -1.2515202)
+
+[node name="pared" type="StaticBody3D" parent="parades y pisos/pared6" unique_id=1205471400]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/pared6/pared" unique_id=2041620108]
+transform = Transform3D(2.7579172, 0, -1.3969839e-09, 0, 1.5411757, 0, -5.9604645e-08, 0, 0.94605285, 1.8589247, 0, -0.24705362)
+shape = SubResource("BoxShape3D_fa8cx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="parades y pisos/pared6/pared" unique_id=428369674]
+transform = Transform3D(4.782465, 0, -4.656613e-10, 0, 1.0000008, 0, -4.7683716e-07, 0, 0.91040987, 1.8447204, 0.27002567, -0.33031368)
+mesh = SubResource("BoxMesh_cgdfr")
+
+[node name="enemigo" parent="." unique_id=645149189 instance=ExtResource("2_cgdfr")]
+transform = Transform3D(1.1986942, 0, 0, 0, 1.943359, 0, 0, 0, 0.011089938, -59.863983, 1.6611736, -86.177605)
+
+[node name="jugador" parent="." unique_id=1650437550 instance=ExtResource("2_lf4p2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000504, -0.4425631, 1.8112559, -0.6050883)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=331449404]
+environment = SubResource("Environment_lf4p2")
