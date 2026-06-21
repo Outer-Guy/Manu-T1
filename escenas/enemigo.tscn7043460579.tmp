@@ -7,6 +7,7 @@ extends CharacterBody3D
 var player 
 
 const SPEED = 1.5
+@onready var target = $jugador
 
 var timer : float = 0
 const enemigoscene : PackedScene = preload (\"res://escenas/enemigo.tscn\")
@@ -30,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func attack():
-	var grupodeenemigos = get_tree().get_nodes_in_group(\"enemigos\") as Array[Node3D]
+	var grupodeenemigos = get_tree().get_nodes_in_group(\"enemigos\") as Array[Node]
 	var new_hurtbox := hurtbox._new_hurt_box(global_position,grupodeenemigos,0.1)
 	get_tree().root.add_child(new_hurtbox)
 	

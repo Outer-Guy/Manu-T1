@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://djn7q46bonw81" path="res://escenas/enemigo.tscn" id="2_cgdfr"]
 [ext_resource type="PackedScene" uid="uid://4heebobn7b2v" path="res://escenas/jugador.tscn" id="2_lf4p2"]
+[ext_resource type="PackedScene" uid="uid://dmbdcguhq55p3" path="res://escenas/spawner.tscn" id="3_cgdfr"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_fa8cx"]
 
@@ -135,6 +136,7 @@ shape = SubResource("BoxShape3D_cgdfr")
 transform = Transform3D(1.5544746, 0, 3.7252903e-09, 0, 1.0000008, 0, -2.9802322e-08, 0, 0.9400768, 4.448612, 0, -9.342905)
 
 [node name="pared" type="StaticBody3D" parent="parades y pisos/pared5" unique_id=1376790845]
+transform = Transform3D(0.99999994, 0, 9.313226e-10, 0, 1, 0, 0, 0, 1, 0.003591299, 0, 0.28920937)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="parades y pisos/pared5/pared" unique_id=1372365969]
 transform = Transform3D(2.7579172, 0, -1.3969839e-09, 0, 1.5411757, 0, -5.9604645e-08, 0, 0.94605285, 1.8589247, 0, -0.24705362)
@@ -165,3 +167,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1.0000504, -0.4425631, 1.8112559
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=331449404]
 environment = SubResource("Environment_lf4p2")
+
+[node name="spawner" parent="." unique_id=653835125 instance=ExtResource("3_cgdfr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.70173, 3.1825554, -86.33848)

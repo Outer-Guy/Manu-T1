@@ -6,7 +6,7 @@ var lifetime : float = 0
 
 const hurtboxScene : PackedScene = preload("res://escenas/hurtbox.tscn")
 
-static func _new_hurt_box(new_position : Vector3, body: Node3D, new_lifetime : float) -> Node3D:
+static func _new_hurt_box(new_position : Vector3, body: Array [Node3D], new_lifetime : float) -> Node3D:
 	var new_hurtbox : Node3D = hurtboxScene.instantiate()
 	new_hurtbox.ListaIgnorar.append(body)
 	new_hurtbox.position = new_position

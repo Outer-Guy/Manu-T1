@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dmbdcguhq55p3"]
+
+[ext_resource type="Script" uid="uid://b42xlgsv4k4fq" path="res://escenas/spawner.gd" id="1_dms7m"]
+[ext_resource type="PackedScene" uid="uid://djn7q46bonw81" path="res://escenas/enemigo.tscn" id="2_tedvv"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dms7m"]
+size = Vector3(1, 0.72802734, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_dms7m"]
+
+[node name="spawner" type="Node3D" unique_id=653835125]
+script = ExtResource("1_dms7m")
+escena = ExtResource("2_tedvv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1286632695]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13598633, 0)
+shape = SubResource("BoxShape3D_dms7m")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=969993503]
+mesh = SubResource("BoxMesh_dms7m")

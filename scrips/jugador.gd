@@ -26,6 +26,6 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func attack():
-	var new_hurtbox := hurtbox._new_hurt_box(position,self,0.1)
+	var new_hurtbox := hurtbox._new_hurt_box(global_position,[self],0.1)
 	get_tree().root.add_child(new_hurtbox)
 	
